@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
 <style>
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -10,21 +18,6 @@
         text-align: center;
         color: white;
         font-size: 2.5rem;
-        margin-bottom: 40px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-    p {
-        
-        color: white;
-        font-size: 2rem;
-        margin-bottom: 40px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-
-     li {
-        
-        color: black;
-        font-size: 1.5rem;
         margin-bottom: 40px;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
@@ -104,21 +97,17 @@
         padding: 0;
     }
 </style>
+<body>
 
-<h4>Listes des Postes</h4>
-
-@foreach ($posts as $post)
-    
-
-<p>Post:</p>
-
-<li> {{$post->title}}
-    
-<br> 
-    
-{{$post->content}} <a href="{{route('posts.show', $post->id)}}">Voir</a>|| <a href="{{route('posts.create')}}"> Ajouter Votre commentaire</a> </li>
+    <h4>Détail du Post</h4>
+        
+    {{$post->title}}
+    <br>
+    {{$post->content}}
 
 
-
-
-@endforeach
+    <br>
+    <br>
+    <a href="{{route('posts.index')}}">Retour à la liste des posts</a>
+</body>
+</html>
